@@ -16,6 +16,10 @@
       <% end %>
       <%= yield %>
       <%= render 'layouts/footer' %>
+        <div>
+          Host IP  <%= request.ip() %>    
+        </div>
+      
       <%= debug(params) if Rails.env.development? %>
     </div>
   </body>

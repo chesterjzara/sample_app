@@ -43,6 +43,7 @@ describe "User pages" do
         end
 
         it { should have_link('delete', href: user_path(User.first)) }
+        
         it "should be able to delete another user" do
           expect do
             click_link('delete', match: :first)

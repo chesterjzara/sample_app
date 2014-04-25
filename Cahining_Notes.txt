@@ -1,0 +1,2 @@
+Check out Active Record querying on guides.rubyonrails.org/active_record_querying.html#scopes
+

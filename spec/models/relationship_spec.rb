@@ -4,9 +4,10 @@ describe Relationship do
 
   let(:follower) { FactoryGirl.create(:user) }
   let(:followed) { FactoryGirl.create(:user) }
-  let(:relationship) { relation = Relationship.create(follower_id: follower.id, followed_id: followed.id)
-debugger
-  	relation}
+  let(:relationship) { relation = Relationship.new(follower_id: follower.id, followed_id: followed.id)
+    
+#debugger
+  }
   	# follower.relationships.create(followed_id: followed.id) }
 
   subject { relationship }

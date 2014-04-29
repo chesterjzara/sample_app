@@ -45,7 +45,7 @@ it "should have the right links on the layout" do
         visit root_path
       end
 
-      after { user.microposts.delete_all }
+      #after { user.microposts.delete_all }
 
       it "should render the user's feed" do
         user.feed.paginate(page: 1).each do |item|
@@ -54,12 +54,14 @@ it "should have the right links on the layout" do
       end
 
       it "should have micropost count and pluralize" do
-        page.should have_content('31 microposts')
+        page.should have_content('Microposts: 31')
       end
 
       it "should paginate after 31" do
         page.should have_selector('div.pagination')
       end
+
+      after { user.microposts.delete_all }
 
       describe "follower/following counts" do
         let(:other_user) { FactoryGirl.create(:user) }
@@ -102,6 +104,8 @@ it "should have the right links on the layout" do
     
     it_should_behave_like "all static pages"
   end
+
+
 
 
 end
